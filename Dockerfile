@@ -5,6 +5,6 @@ COPY . .
 RUN go mod init example/hello && go build -o /hello
 
 # Etapa de execução
-FROM alpine:3.19
+FROM scratch
 COPY --from=build /hello /hello
 ENTRYPOINT [ "/hello" ]
